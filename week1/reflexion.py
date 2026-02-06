@@ -15,7 +15,11 @@ Keep the implementation minimal.
 """
 
 # TODO: Fill this in!
-YOUR_REFLEXION_PROMPT = ""
+YOUR_REFLEXION_PROMPT = """
+You are a coding assistant. Your job is to improve the Python function is_valid_password(password: str) -> bool.
+You should improve it based on the current implementation and failure history.
+Keep the implementation minimal. No prose or comments.  Output ONLY a single fenced Python code block.
+"""
 
 
 # Ground-truth test suite used to evaluate generated code
@@ -96,7 +100,7 @@ def your_build_reflexion_context(prev_code: str, failures: List[str]) -> str:
 
     Return a string that will be sent as the user content alongside the reflexion system prompt.
     """
-    return ""
+    return f"The current implementation:\n{prev_code}\n The failure history:\n{failures}\n"
 
 
 def apply_reflexion(

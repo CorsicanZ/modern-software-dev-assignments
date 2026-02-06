@@ -70,7 +70,13 @@ TOOL_REGISTRY: Dict[str, Callable[..., str]] = {
 # ==========================
 
 # TODO: Fill this in!
-YOUR_SYSTEM_PROMPT = ""
+YOUR_SYSTEM_PROMPT = f"""
+Your are a tool caller, and you should only call tools from the tool registry.
+The output should be a fenced json block with a string of tool and an object of args.
+
+Tool Registry:
+{TOOL_REGISTRY}
+"""
 
 
 def resolve_path(p: str) -> str:
