@@ -7,7 +7,23 @@ load_dotenv()
 NUM_RUNS_TIMES = 5
 
 # TODO: Fill this in!
-YOUR_SYSTEM_PROMPT = ""
+YOUR_SYSTEM_PROMPT = """
+Your job is to reverse the given word letter by letter.
+
+Here are some examples:
+
+Input: httpapi
+Output: ipaptth
+
+Input: status
+Output: sutats
+
+Input: httpok
+Output: koptth
+
+Input:http
+Output: ptth
+"""
 
 USER_PROMPT = """
 Reverse the order of letters in the following word. Only output the reversed word, no other text:
